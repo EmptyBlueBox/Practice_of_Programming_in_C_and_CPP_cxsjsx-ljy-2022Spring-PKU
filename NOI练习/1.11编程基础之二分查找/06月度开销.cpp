@@ -2,6 +2,7 @@
 #include <vector>
 #define ll long long
 using namespace std;
+//一串数，将其分成m段，求每段中数的和的最大值的下确界
 vector<ll> a;
 ll m, n;
 bool ok(ll x) {
