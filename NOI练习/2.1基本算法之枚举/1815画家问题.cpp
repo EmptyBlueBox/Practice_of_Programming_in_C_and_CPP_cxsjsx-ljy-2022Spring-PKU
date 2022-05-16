@@ -1,8 +1,10 @@
 #include <iostream>
 #define ll long long
 using namespace std;
+//和熄灯问题非常像
+//都涂成黄色，0是黄色，1是白色;0是不涂，1是涂
 ll n;
-ll ori[17][17] = { {0} }, ans[17][17] = { {0} };//都涂成黄色，0是黄色，1是白色;0是不按，1是按
+ll ori[17][17] = { {0} }, ans[17][17] = { {0} };
 int ok() {
 	int cnt = 0;
 	for (int i = 2; i <= n + 1; i++) {
