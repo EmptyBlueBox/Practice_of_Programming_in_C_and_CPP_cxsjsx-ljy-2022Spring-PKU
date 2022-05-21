@@ -3,7 +3,8 @@
 #include <vector>
 #define endl '\n'
 using namespace std;
-//最长上升（下降）不连续子串
+
+//取最长上升子序列与最长下降子序列更长的那个
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
