@@ -27,14 +27,19 @@ int main() {
 		info maxa;
 		maxa.Max_Length = 0;
 		for (int i = 1; i <= la; i++) {
-			if (a[i] < b[j])
-				maxa = maxa.Max_Length > dp[i].Max_Length ? maxa : dp[i];
-			else if (a[i] == b[j]) {
+			if (a[i] == b[j]) {
 				dp[i] = maxa;
 				dp[i].Max_Length++;
 				dp[i].Num.push_back(a[i]);
 				ans = ans.Max_Length > dp[i].Max_Length ? ans : dp[i];
 			}
+			//如果不等于dp[i]就不变，因为dp是滚动数组，dp[i][j]只与dp[i][j-1]有关，而与dp[i][j-2]及以前的无关
+			//实际上还与dp[i-k][j]有关，因此应该从前往后滚动
+			//（背包问题与dp[v-i][j-1]有关，因此应该从后往前滚动）
+			//else if (a[i] != b[j])
+			//	dp[i] = dp[i];
+			if (a[i] < b[j])//维护maxa
+				maxa = maxa.Max_Length > dp[i].Max_Length ? maxa : dp[i];
 		}
 	}
 	cout << ans.Max_Length << endl;
