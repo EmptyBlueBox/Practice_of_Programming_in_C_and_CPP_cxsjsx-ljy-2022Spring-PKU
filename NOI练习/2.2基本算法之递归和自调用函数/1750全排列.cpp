@@ -14,7 +14,6 @@ void next_permutation(string a, int s) {
 		swap(a[s], a[i]);
 		sort(a.begin() + s + 1, a.begin() + i + 1);
 		next_permutation(a, s + 1);
-		swap(a[s], a[i]);
 	}
 	return;
 }
