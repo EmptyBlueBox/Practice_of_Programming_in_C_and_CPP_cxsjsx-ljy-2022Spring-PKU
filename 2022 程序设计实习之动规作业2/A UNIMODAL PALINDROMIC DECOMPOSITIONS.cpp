@@ -3,7 +3,7 @@ using namespace std;
 
 //记忆化搜索
 long long ans[251][251][251] = { {{0}} };//答案很大，用long long
-int f(int n, int minfac, int maxfac) {//分n，最小的元素minfac，中间的数maxfac
+int f(int n, int minfac, int maxfac) {//把n拆分，最小的元素minfac，单峰排列中间的峰是maxfac
 	if (ans[n][minfac][maxfac])
 		return ans[n][minfac][maxfac];
 	else if (minfac == n)
