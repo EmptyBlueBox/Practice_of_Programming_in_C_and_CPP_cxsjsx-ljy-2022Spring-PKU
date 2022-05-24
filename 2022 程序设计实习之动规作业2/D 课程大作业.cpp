@@ -33,7 +33,7 @@ int main() {
 					int plus_deduct = max(0, sum[i] - ddl[j]);
 					if (dp[i ^ (1 << j)] + plus_deduct < dp[i])//扣分更少
 						dp[i] = dp[i ^ (1 << j)] + plus_deduct, ans[i] = ans[i ^ (1 << j)] + name[j] + '\n';
-					if (dp[i ^ (1 << j)] + plus_deduct == dp[i] && ans[i] > ans[i ^ (1 << j)] + name[j] + '\n')//扣分一样但是完成科目字典序等小
+					if (dp[i ^ (1 << j)] + plus_deduct == dp[i] && ans[i] > ans[i ^ (1 << j)] + name[j] + '\n')//扣分一样但是完成科目字典序更小
 						ans[i] = ans[i ^ (1 << j)] + name[j] + '\n';
 				}
 		cout << dp[(1 << n) - 1] << endl << ans[(1 << n) - 1];
