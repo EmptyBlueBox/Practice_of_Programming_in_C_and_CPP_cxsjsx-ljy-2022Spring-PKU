@@ -16,7 +16,7 @@ int main() {
 			cin >> info[i], presum[i] = presum[i - 1] + info[i];//不要直接读到dp[i][i]里，dp[i][i]应该是0！！！
 		for (int len = 1; len <= n; len++)//枚举区间长度，不要枚举右端点！！！
 			for (int l = 1; l <= n; l++) { //枚举左端点
-				int r = l + len - 1;//右端点
+				int r = l + len - 1;//枚举右端点
 				if (r > n)//防止溢出
 					break;
 				dp[l][r] = 0x3f3f3f3f;//区间dp要在得到l和r之后再初始化！！！
