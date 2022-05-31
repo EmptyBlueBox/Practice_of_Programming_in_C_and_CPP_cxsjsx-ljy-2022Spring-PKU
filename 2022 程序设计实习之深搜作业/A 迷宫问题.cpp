@@ -15,7 +15,7 @@ bool dfs(pair<int, int> x, int depth) { //返回经过这个点是否能到终�
 	vis[x.first][x.second] = true;//不用回溯
 	for (int i = 0; i < 4; i++) {
 		int xx = x.first + dx[i], yy = x.second + dy[i];
-		if (a[xx][yy] && dfs(make_pair(xx, yy), depth + 1)) {//可行域并且往这里走能到终点
+		if (a[xx][yy] && dfs({xx, yy}, depth + 1)) {//可行域并且往这里走能到终点
 			path[depth] = x;
 			return true;
 		}
