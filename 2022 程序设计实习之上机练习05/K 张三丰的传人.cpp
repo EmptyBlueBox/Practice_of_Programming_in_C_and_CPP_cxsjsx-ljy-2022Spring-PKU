@@ -9,7 +9,7 @@ bool f(int leftt, int mint) {
 		return abs(sum - 1) < eps;
 	ans.push_back(0);//扩容
 	for (int i = mint; i <= leftt; i++) {
-		if (sum + 1.0 / i > 1)//剪枝，中途发现大于1就不递归了
+		if (sum + 1.0 / i > 1 + eps)//剪枝，中途发现大于1就不递归了
 			continue;
 		ans.back() = i;
 		sum += 1.0 / i;
