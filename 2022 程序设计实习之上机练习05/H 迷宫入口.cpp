@@ -4,7 +4,7 @@ using namespace std;
 
 //看第一个空格的地方是否能放下某种小片，如果放不下必return false，不要枚举每一个空格，否则TLE！！！
 int s, info[11];//每个边长的小片有几个
-bool map[17][17] = { {false} };
+bool map[50][50] = { {false} };//题目没给锁的大小，大概最大50
 bool can_put(int x, int y, int d) { //左上角(x,y)处可以放下d大小的小片
 	if (x + d - 1 > s || y + d - 1 > s) return false;//越界也不能放下！！！
 	for (int i = x; i <= x + d - 1; i++)
