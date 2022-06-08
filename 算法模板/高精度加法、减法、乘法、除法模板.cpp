@@ -6,7 +6,7 @@
 using namespace std;
 
 const int N = 10088;
-//高精度加法，无负数
+//高精度加法，无负数，不能与vector结合（不知道为什么）
 string Big_Integer_Add(string a, string b) { //正常无多余0的输入
 	string ans;
 	int na[N] = { 0 }, nb[N] = { 0 }, la = a.length(), lb = b.length(), lm = max(la, lb);
@@ -120,7 +120,7 @@ string Big_Integer_Div(string n1, string n2, int nn) {
 	if (nn == 1) return s;
 	if (nn == 2) return v;
 }
-//高精度除法，高精度除以高精度，div的第三个参数是选择返回商(nn=1)还是余数(nn=2)
+//高精度除法，高精度除以单精度，nn是选择返回商(nn=1)还是余数(nn=2)
 string Big_Integer_Div(string a, int b, int nn) { //高精度a除以单精度b
 	string r, ans;
 	int d = 0;
