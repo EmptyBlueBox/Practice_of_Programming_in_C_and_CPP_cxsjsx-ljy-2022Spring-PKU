@@ -46,5 +46,4 @@ int main() {
 		if (!all_end)
 			cout << "impossible\n\n";
 	}
-
 }
