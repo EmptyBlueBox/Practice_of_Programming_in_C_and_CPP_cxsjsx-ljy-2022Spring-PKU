@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 int n, info[1001], dp[1001][1001] = { {0} };//前i个删除j个有几个在自己的位置

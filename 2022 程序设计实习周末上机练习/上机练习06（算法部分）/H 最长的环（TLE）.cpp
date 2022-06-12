@@ -35,19 +35,19 @@ int main() {
 					memset(mark1, 0, sizeof(mark1));//重置边缘1标记数组
 					queue<pair<int, int>> q;
 					//标记这块0在vis0，且标记这块0附近的1在mark1
-					q.push({ i,j });//初始化的点不能直接标记vis！！！不然循环直接退出
+					q.push({ i,j });
 					while (!q.empty()) {
 						pair<int, int> now = q.front();
 						q.pop();
-						if (vis0[now.first][now.second] || now.first<1 || now.first>m || now.second<1 || now.second>n)
-							continue;
-						else if (map[now.first][now.second]) {
-							mark1[now.first][now.second] = true;
-							continue;
-						}
 						vis0[now.first][now.second] = true;
 						for (int i = 0; i < 8; i++) {
 							int xx = now.first + dx0[i], yy = now.second + dy0[i];
+							if (vis0[xx][yy] || xx<1 || xx>m || yy<1 || yy>n)
+								continue;
+							else if (map[xx][yy]) {
+								mark1[xx][yy] = true;
+								continue;
+							}
 							q.push({ xx,yy });
 						}
 					}
@@ -104,8 +104,8 @@ ring_end:
 					ans = max(ans, cnt);
 				}
 		if (ans < 4) { //没找到环，特判有没有小四格
-			for (int i = 1; i <= m; i ++)
-				for (int j = 1; j <= n; j ++)
+			for (int i = 1; i <= m; i++)
+				for (int j = 1; j <= n; j++)
 					if (map[i][j] == 1 && map[i][j + 1] == 1 && map[i + 1][j] == 1 && map[i + 1][j + 1] == 1)//有方块
 						ans = 4;
 		}
