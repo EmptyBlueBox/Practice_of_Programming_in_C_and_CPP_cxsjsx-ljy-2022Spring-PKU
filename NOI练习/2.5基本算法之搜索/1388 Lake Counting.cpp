@@ -4,7 +4,7 @@
 using namespace std;
 
 bool map[102][102] = { {0} };
-int m, n, dx[8] = { 1,-1,0,0,1,1,-1,-1 }, dy[8] = { 0,0,1,-1,1,-1,-1,1 };//第几个节点是什么颜色,col[0]是总颜色数
+int m, n, dx[8] = { 1,-1,0,0,1,1,-1,-1 }, dy[8] = { 0,0,1,-1,1,-1,-1,1 };
 void dfs(int x, int y) {
 	map[x][y] = false;
 	for (int i = 0; i < 8; i++) {
