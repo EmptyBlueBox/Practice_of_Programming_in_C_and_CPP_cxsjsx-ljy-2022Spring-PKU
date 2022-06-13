@@ -3,7 +3,7 @@
 #include <string>
 #include <cstring>
 using namespace std;
-//http://noi.openjudge.cn/ch0205/156/
+
 //这个题的vis是字母是否到过，不是是否走过，因此vis与dis不能合并
 char map[22][22];
 int m, n, dx[4] = { 1,-1,0,0 }, dy[4] = { 0,0,1,-1 }, ans = 1, dis[28][28];//与(1, 1)的距离
