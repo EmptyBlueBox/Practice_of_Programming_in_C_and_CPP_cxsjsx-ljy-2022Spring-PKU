@@ -3,7 +3,7 @@ using namespace std;
 
 int n, c, w[19], bag_used[19] = { 0 }, ans = 0x3f3f3f3f;
 void dfs(int piece) {
-	if (bag_used[0] > ans)//已经用了比已知答案多，prune
+	if (bag_used[0] >= ans)//已经用了比已知答案多，prune，等于的时候也要剪枝！！！
 		return;
 	if (piece == n + 1) {
 		ans = min(ans, bag_used[0]);
