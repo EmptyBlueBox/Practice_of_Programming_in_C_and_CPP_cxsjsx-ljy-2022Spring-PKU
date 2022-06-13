@@ -12,23 +12,22 @@ struct node {
 int ans[100000], n;
 int main() {
 	memset(ans, 0x3f, sizeof(ans));
-	ans[12345] = 0;
 	queue<node> q;
 	q.push({ "12345",0,0,0 });
+	ans[12345] = 0;
 	while (!q.empty()) {
 		node now = q.front();
 		q.pop();
 		string ss = now.a;
-		for (int i = 0; i < 5; i++)
-			for (int j = i + 1; j < 5; j++) {
-				swap(ss[i], ss[j]);
-				int tmp = atoi(ss.c_str());
-				if (ans[tmp] == 0x3f3f3f3f) {
-					q.push({ ss,now.step + 1,now.t2,now.t3 });
-					ans[tmp] = now.step + 1;
-				}
-				swap(ss[i], ss[j]);
+		for (int i = 0; i < 4; i++) {
+			swap(ss[i], ss[i + 1]);
+			int tmp = atoi(ss.c_str());
+			if (ans[tmp] == 0x3f3f3f3f) {
+				q.push({ ss,now.step + 1,now.t2,now.t3 });
+				ans[tmp] = now.step + 1;
 			}
+			swap(ss[i], ss[i + 1]);
+		}
 		if (now.t2 < 3)
 			for (int i = 0; i < 5; i++) {
 				ss[i] = char((ss[i] - '0' + 1) % 10 + '0');
