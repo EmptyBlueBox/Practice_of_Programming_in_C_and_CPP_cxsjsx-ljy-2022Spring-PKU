@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 int m, n, dx[8] = { 0,1,0,-1,1,1,-1,-1 }, dy[8] = { 1,0,-1,0,1,-1,-1,1 };
