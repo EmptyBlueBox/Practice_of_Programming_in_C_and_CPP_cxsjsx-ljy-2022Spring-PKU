@@ -26,7 +26,7 @@ int main() {
 			q.pop();
 			for (int i = 0; i < 4; i++) {
 				int xx = now.x + dx[i], yy = now.y + dy[i], hpp = now.hp, tt = now.t + 1;
-				if (vis[xx][yy][tt] || map[xx][yy] == '#' || (map[xx][yy] == '*' && hpp == 1) || xx<1 || xx>m || yy<1 || yy>n)
+				if (vis[xx][yy][hpp] || map[xx][yy] == '#' || (map[xx][yy] == '*' && hpp == 1) || xx<1 || xx>m || yy<1 || yy>n)
 					continue;
 				else if (xx == m && yy == n) {
 					cout << tt << endl;
