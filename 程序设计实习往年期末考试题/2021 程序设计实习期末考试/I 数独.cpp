@@ -1,9 +1,10 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 int map[9][9];
 bool row[9][10] = { {0} }, col[9][10] = { {0} }, sq[9][10] = { {0} }, e = false;
-void f(int x,int y) {
+void f(int x, int y) {
 	if (e)
 		return;
 	for (int i = 0; i < 9; i++)
@@ -24,6 +25,7 @@ void f(int x,int y) {
 		for (int j = 0; j < 9; j++)
 			cout << map[i][j];
 		cout << endl;
+		e = true;//别忘了设置全部结束！！！没设置有可能TLE！！！
 	}
 }
 int main() {
