@@ -2,22 +2,19 @@
 #include <string>
 using namespace std;
 
-int not_paired, n;
+int n;
 string ans;
-void f(int depth) { //深度是放了几个左括号
-	if (depth == n + 1) {
-		for (int i = 0; i < not_paired; i++)
-			ans += ')';
+void f(int left, int not_paired) { //已经放了几个左括号,还有几个左括号没匹配
+	if (left == n && not_paired == 0) {
 		cout << ans << endl;
-		for (int i = 0; i < not_paired; i++)
-			ans.pop_back();
 		return;
 	}
-	ans += '(', not_paired++, f(depth + 1), not_paired--, ans.pop_back();
+	if (left < n)
+		ans += '(', f(left + 1, not_paired + 1), ans.pop_back();
 	if (not_paired)
-		ans += ')', not_paired--, f(depth), not_paired++, ans.pop_back();
+		ans += ')', f(left, not_paired - 1), ans.pop_back();
 }
 int main() {
 	cin >> n;
-	f(1);
+	f(0, 0);
 }
