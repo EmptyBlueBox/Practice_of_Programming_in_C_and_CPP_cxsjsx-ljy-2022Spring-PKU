@@ -1,15 +1,6 @@
 #include <iostream>
-#include <cstring>
-#include <string>
-#include <vector>
 #include <queue>
-#include <map>
-#include <set>
 #include <unordered_map>
-#include <bitset>
-#include <algorithm>
-#include <cmath>
-#include <iomanip>
 using namespace std;
 
 struct node {
@@ -65,7 +56,7 @@ int main() {
 			for (int j = 0; j < 4; j++)
 				if (map[xx][yy] == summon_sight[j])//被召唤师挡住的格子一直不能走，即使召唤师被打败了也不可以！！！
 					goto next_dir2;
-			vis[xx][yy][p.mg] = true;
+			vis[xx][yy][p.mg] = true;//只要有机会就更新vis数组！！！否则有可能MLE、TLE！！！
 			q.push({ xx,yy,p.mg,dd });
 		next_dir2:;
 		}
