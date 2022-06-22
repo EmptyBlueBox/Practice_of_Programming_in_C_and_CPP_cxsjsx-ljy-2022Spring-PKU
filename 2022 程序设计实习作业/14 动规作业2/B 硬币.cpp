@@ -10,8 +10,7 @@ int main() {
 	for (int i = 0; i < n; i++)
 		for (int j = sum; j >= a[i]; j--)
 			dp[j] += dp[j - a[i]];//先算出来所有硬币的组合数目（使用了滚动数组）
-
-	int ans[201] = { 0 }, dp1[10001] = { 0 };
+	int ans[201] = { 0 };
 	for (int i = 0; i < n; i++) {
 		for (int j = a[i]; j <= sum; j++)
 			dp[j] -= dp[j - a[i]];//回退最后一个硬币，如果不能组成sum则这是一个答案
