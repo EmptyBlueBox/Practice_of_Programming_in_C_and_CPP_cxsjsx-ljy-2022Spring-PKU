@@ -16,7 +16,7 @@ bool can_learn(int x) {
 	vis[x] = true;
 	for (int i = 0; i < rely[x].size(); i++)
 		if (!can_learn(rely[x][i])) {
-			can[rely[x][i]] = false;
+			can[x] = false;
 			return false;
 		}
 	can[x] = true;
