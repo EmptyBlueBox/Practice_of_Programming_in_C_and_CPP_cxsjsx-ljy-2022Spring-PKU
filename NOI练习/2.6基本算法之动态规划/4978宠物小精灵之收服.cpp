@@ -1,13 +1,9 @@
 #include <iostream>
 using namespace std;
 
-int n, m, pokemon, dp[1001][501] = { {0} };//用了几个精灵球，用了多少体力，相当于从三维利用滚动数组变成二维
+int n, m, pokemon, dp[1001][501] = { {0} };//用了几个精灵球，用了多少体力，相当于从三维利用滚动数组变成二维；并且不用全装满
 int main() {
 	cin >> n >> m >> pokemon;
-	for (int i = 0; i <= n; i++)
-		for (int j = 0; j <= m; j++)
-			dp[i][j] = 0xc0c0c0c0;//恰好装满的背包问题
-	dp[0][0] = 0;
 	for (int i = 1; i <= pokemon; i++) {
 		int x, y;
 		cin >> x >> y;
