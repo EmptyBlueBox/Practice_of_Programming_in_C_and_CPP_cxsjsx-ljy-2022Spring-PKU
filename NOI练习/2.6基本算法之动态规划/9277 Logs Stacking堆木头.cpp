@@ -13,8 +13,7 @@ int main() {
 		for (int i = M + 1; i <= n; i++)
 			dp[i] = (dp[i - 1] + sum) % 100000, sum = (sum + dp[i]) % 100000;//不是10000
 		M = n;
-LOOP:
-		;
+	LOOP:;
 		cout << dp[n] << endl;
 	}
 }
