@@ -1,9 +1,9 @@
 #include <iostream>
-#include <algorithm>
+#include <cstring>
 #define endl '\n'
 using namespace std;
 
-int n, m,info[302], dis[302][302] = { {0} }, dp[32][302] = { {0} };//i个邮局j个村庄的最小值
+int n, m, info[302], dis[302][302] = { {0} }, dp[32][302] = { {0} };//i个邮局j个村庄的最小值
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
@@ -15,11 +15,8 @@ int main() {
 	for (int i = 1; i <= n; i++)
 		for (int j = i + 1; j <= n; j++)
 			dis[i][j] = dis[i][j - 1] + info[j] - info[(i + j) / 2];
-	for (int i = 1; i <= 31; i++)
-		for (int j = 1; j <= 301; j++)
-			dp[i][j] = 0x3f3f3f3f;
-	for (int i = 1; i <= n; i++)
-		//前i个村庄一个邮局，最大值不是最后一个邮局的坐标！！！
+	memset(dp, 0x3f, sizeof(dp));
+	for (int i = 1; i <= n; i++)//前i个村庄一个邮局，最大值不是最后一个邮局的坐标！！！
 		dp[1][i] = dis[1][i];
 	//动态规划
 	for (int i = 2; i <= m; i++)//i个邮局
