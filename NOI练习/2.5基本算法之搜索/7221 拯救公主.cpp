@@ -16,7 +16,7 @@ int main() {
 	int T, dx[4] = { 1, -1, 0, 0 }, dy[4] = { 0,0,1,-1 };
 	cin >> T;
 	while (T--) {
-		int m, n, k, ans = 0x3f3f3f3f;
+		int m, n, k;
 		cin >> m >> n >> k;
 		char map[202][202];
 		queue<node> q;
@@ -28,7 +28,7 @@ int main() {
 				if (map[i][j] == 'S') q.push({ i,j,0 }), dis[i][j][0] = 0;
 				else if (map[i][j] == '$') tp.push_back({ i,j });
 			}
-		while (!q.empty()) {
+		while (!q.empty()) {//这样的搜索方式保证只要队列内是单调的
 			node t = q.front();
 			q.pop();
 			for (int i = 0; i < 4; i++) {
@@ -38,8 +38,10 @@ int main() {
 					gg[map[xx][yy] - '0'] = true;
 				if (xx<1 || xx>m || yy<1 || yy>n || map[xx][yy] == '#')//越界
 					continue;
-				else if (map[xx][yy] == 'E' && gg.count() >= k)//到达终点
-					ans = min(ans, dd);
+				else if (map[xx][yy] == 'E' && gg.count() >= k) { //到达终点
+					cout << dd << endl;
+					goto loop;
+				}
 				if (map[xx][yy] == '$') { //遇到传送门，枚举每一个能tp去的地方，如果dis比dd大就传送过去
 					for (int i = 0; i < tp.size(); i++)
 						if (dis[tp[i].first][tp[i].second][gg.to_ulong()] > dd)
@@ -48,6 +50,7 @@ int main() {
 					dis[xx][yy][gg.to_ulong()] = dd, q.push({ xx,yy,gg });
 			}
 		}
-		cout << (ans == 0x3f3f3f3f ? "oop!" : to_string(ans)) << endl;
+		cout << "oop!\n";
+	loop:;
 	}
 }
