@@ -5,7 +5,7 @@ int m, n, dx[4] = { 0,-1,0,1 }, dy[4] = { -1,0,1,0 }, map[52][52], cnt = 0, max_
 bool vis[52][52] = { {false} };
 bool seperate(int x, int y, int dir) {
 	if (dir == 3) return map[x][y] >= 8;
-	else if (dir == 2)	return map[x][y] % 8 >= 4;
+	else if (dir == 2) return map[x][y] % 8 >= 4;
 	else if (dir == 1) return map[x][y] % 4 >= 2;
 	else return map[x][y] % 2 >= 1;
 }
