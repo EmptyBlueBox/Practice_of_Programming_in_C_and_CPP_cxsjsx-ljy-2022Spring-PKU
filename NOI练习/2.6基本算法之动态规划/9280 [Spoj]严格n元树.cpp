@@ -62,10 +62,10 @@ string Big_Integer_Power(string base, int exp) {
 
 int main() {
 	int k, d;
-	string dp[17];
+	string dp[17];//深度小于等于i的所有严格n元树的个数
 	cin >> k >> d;
 	dp[0] = "1";
 	for (int i = 1; i <= d; i++)
-		dp[i] = Big_Integer_Add(Big_Integer_Power(dp[i - 1], k), "1");
+		dp[i] = Big_Integer_Add(Big_Integer_Power(dp[i - 1], k), "1");//顶节点的所有儿子
 	cout << Big_Integer_Sub(dp[d], dp[d - 1]) << endl;
 }
