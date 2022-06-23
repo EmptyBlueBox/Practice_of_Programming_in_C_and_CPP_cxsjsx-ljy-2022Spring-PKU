@@ -9,14 +9,12 @@ using namespace std;
 //dp[i][j]=max(dp[i-1][j],dp[i][j-1]) otherwise
 int Max_Mutual_Substring_Length(string a, string b) {
 	int dp[201][201] = { {0} }, la = a.length() - 1, lb = b.length() - 1;
-	for (int i = 1; i <= la; i++) {
-		for (int j = 1; j <= lb; j++) {
+	for (int i = 1; i <= la; i++)
+		for (int j = 1; j <= lb; j++)
 			if (a[i] == b[j])//笔误，不是(a[i] == a[j])
 				dp[i][j] = dp[i - 1][j - 1] + 1;
 			else
 				dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
-		}
-	}
 	return dp[la][lb];
 }
 int main() {
