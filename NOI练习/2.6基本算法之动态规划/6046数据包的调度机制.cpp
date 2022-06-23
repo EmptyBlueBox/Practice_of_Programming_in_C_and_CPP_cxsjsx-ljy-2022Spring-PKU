@@ -8,8 +8,8 @@ int main() {
 	int N;
 	cin >> N;
 	while (N--) {
-		memset(dp, 0, sizeof(dp));
-		int n, info[101] = { 0 };//只发送第i到j个数据包的最小延迟
+		memset(dp, 0, sizeof(dp));//只发送第i到j个数据包的最小延迟
+		int n, info[101] = { 0 };
 		int presum[101] = { 0 };//前缀和
 		cin >> n;
 		for (int i = 1; i <= n; i++)
