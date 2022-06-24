@@ -5,7 +5,7 @@ int main() {
 	int N;
 	cin >> N;
 	while (N--) {
-		int n, tmp, ans = 0, dp[100001] = { 0 };//以i为结尾的最多偷窃数额
+		int n, tmp, ans = 0, dp[100001] = { 0 };//不是以i为结尾的最多偷窃数额
 		cin >> n;
 		if (n == 1) {
 			cin >> dp[1];
