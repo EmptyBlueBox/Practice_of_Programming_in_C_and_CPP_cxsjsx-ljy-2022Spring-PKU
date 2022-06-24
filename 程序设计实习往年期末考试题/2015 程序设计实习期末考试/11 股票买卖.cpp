@@ -16,7 +16,7 @@ int main() {
 			cin >> info[i];
 		int premin = 0x3f3f3f3f;
 		for (int i = 1; i <= n; i++)
-			ansl[i] = max(ansl[i - 1], info[i] - premin),v premin = min(premin, info[i]);//类似最长子串和，是以i为结尾的最大值
+			ansl[i] = max(ansl[i - 1], info[i] - premin), premin = min(premin, info[i]);//类似最长子串和，是以i为结尾的最大值
 		int nxtmax = 0xc0c0c0c0;
 		for (int i = n; i >= 1; i--)
 			ansr[i] = max(ansr[i + 1], nxtmax - info[i]), nxtmax = max(nxtmax, info[i]);
