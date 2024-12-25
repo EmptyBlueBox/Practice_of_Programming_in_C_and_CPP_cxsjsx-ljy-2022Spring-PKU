@@ -1,10 +1,6 @@
-# 2022_Spring_PKU_cxsjsx_ljy_Algorithm_Part
+# Practice of Programming in C and CPP Repository
 
-2022年北京大学春季学期程序设计实习课程仓库
-
-程序设计实习网址：[程序设计实习](http://cxsjsx.openjudge.cn/)
-
-包含：
+Openjudge URL: [Openjudge](http://cxsjsx.openjudge.cn/)
 
 1. 作业
 2. 课下练习
@@ -12,3 +8,5 @@
 4. 期末考题
 5. 算法模板整理
 6. Qt 大作业
+
+Welcome to my [Course Review](https://www.lyt0112.com/blog/course_review-zh) !
